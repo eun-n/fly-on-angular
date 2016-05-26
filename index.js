@@ -12,4 +12,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/api/airplanes', require('./controllers/airplane'));
 
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/*', function(req, res) {
+	res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 app.listen(3000);

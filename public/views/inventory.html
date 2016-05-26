@@ -1,0 +1,18 @@
+<h1>All Planes</h1>
+
+<div>
+Manufacturer <input type="text" ng-model="manufacturer">
+Model <input type="text" ng-model="model">
+Engines <input type="number" ng-model="engines">
+<button ng-click="createPlane(manufacturer, model, engines)">Add Plane</button>
+</div>
+
+<div ng-if="planes.length === 0">
+	No planes in inventory.
+</div>
+
+<div ng-repeat="plane in planes track by $index">
+	Manufacturer: {{plane.manufacturer}}
+	Model: {{plane.model}}
+	Engines:  {{plane.engines}}
+</div>
